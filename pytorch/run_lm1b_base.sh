@@ -3,9 +3,7 @@
 if [[ $1 == 'train' ]]; then
     echo 'Run training...'
     python train.py \
-        --cuda \
-        --data ../data/one-billion-words/ \
-        --dataset lm1b \
+        --data demo_data/ \
         --adaptive \
         --n_layer 18 \
         --d_model 1024 \
@@ -29,9 +27,7 @@ if [[ $1 == 'train' ]]; then
 elif [[ $1 == 'eval' ]]; then
     echo 'Run evaluation...'
     python eval.py \
-        --cuda \
-        --data ../data/one-billion-words/ \
-        --dataset lm1b \
+        --data demo_data/ \
         --batch_size 64 \
         --tgt_len 32 \
         --mem_len 128 \

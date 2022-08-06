@@ -66,7 +66,7 @@ class Vocab(object):
             for line in f:
                 symb = line.strip().split()[0]
                 self.add_symbol(symb)
-        self.unk_idx = self.sym2idx['<UNK>']
+        #self.unk_idx = self.sym2idx['<UNK>']
 
     def build_vocab(self):
         if self.vocab_file:
@@ -88,6 +88,8 @@ class Vocab(object):
 
             print('final vocab size {} from {} unique tokens'.format(
                 len(self), len(self.counter)))
+
+        self.unk_idx = self.sym2idx['<UNK>']
 
     def encode_file(self, path, ordered=False, verbose=False, add_eos=True,
             add_double_eos=False):
